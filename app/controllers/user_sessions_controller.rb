@@ -9,7 +9,6 @@ class UserSessionsController < ApplicationController
     user_params = params.require(:session).permit(:email, :password)
     @user = User.find_by(email: user_params[:email])&.authenticate(user_params[:password])
 
-
     if @user
       session[:user_id] = @user.id
       redirect_to root_path, status: :see_other
