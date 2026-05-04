@@ -4,7 +4,11 @@ class UserSessionsController < ApplicationController
   def new; end
 
   def create
-    @user = User.find_by(email: params[:email])&.authenticate(params[:password])
+    Rails.logger.debug "Params: #{params.inspect}"
+
+    user_params = params.require(:session).permit(:email, :password)
+    @user = User.find_by(email: user_params[:email])&.authenticate(user_params[:password])
+
 
     if @user
       session[:user_id] = @user.id
