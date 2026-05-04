@@ -14,4 +14,8 @@
     "@tailwindcss/cli": "^4.2.4",
     "tailwindcss": "^4.2.4"
   }
+
+  "engines": {
+  "node": ">=24.15.0 <24.15.0"
+}
 }
