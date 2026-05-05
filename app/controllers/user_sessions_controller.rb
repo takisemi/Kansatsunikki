@@ -18,7 +18,7 @@ class UserSessionsController < ApplicationController
 
 
     # デバッグ用ログ
-    ails.logger.info "Login result: #{@user.present?}"
+    Rails.logger.info "Login result: #{@user.present?}"
 
 
     if @user
