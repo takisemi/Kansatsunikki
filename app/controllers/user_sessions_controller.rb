@@ -5,15 +5,28 @@ class UserSessionsController < ApplicationController
 
   def create
     Rails.logger.debug "Params: #{params.inspect}"
+  # デバッグ用ログ
+  Rails.logger.info "=== Login attempt ==="
+  Rails.logger.info "Email: #{params[:session][:email]}"
+  Rails.logger.info "User found: #{User.find_by(email: params[:session][:email]).present?}"
+  
+
+
 
     user_params = params.require(:session).permit(:email, :password)
     @user = login(params[:session][:email], params[:session][:password])
 
+
+    # デバッグ用ログ
+    ails.logger.info "Login result: #{@user.present?}"
+
+
     if @user
-      redirect_to root_path, status: :see_other
+      redirect_to root_path, status: :see_other, success: 'ログインしました'
     else
-      flash.now[:alert] = "ログインに失敗しました"
-      render :new, status: :unprocessable_entity
+       Rails.logger.info "Login failed"
+       flash.now[:danger] = 'ログインに失敗しました'
+       render :new, status: :unprocessable_entity
     end
   end
 
