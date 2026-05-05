@@ -1,11 +1,14 @@
 <header>
-  <nav class='navbar navbar-expand-lg navigation navbar-light bg-light'>
-    <%= link_to '/', class: 'navbar-brand' do %>
+  </nav>
+  <div class="flex justify-start">
+    <%= link_to '/', class: 'toppage' do %>
       <%= image_tag 'logo.png' %>
     <% end %>
 
-    <div class='navbar-collapse'>
-            <%= link_to t('header.login'), login_path, class: "nav-link" %>
+    <div class="flex justify-end">
+      <div>
+        <%= link_to t('header.login'), login_path %>
+      </div>
     </div>
-  </nav>
+  </div>
 </header>

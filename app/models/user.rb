@@ -1,8 +1,15 @@
 class User < ApplicationRecord
-  has_secure_password
+  authenticates_with_sorcery!
+  has_many :posts
+  # has_secure_passwordは、Sorceryと競合するので削除。
 
-  validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:password_digest] }
   validates :first_name, presence: true, length: { maximum: 255 }
   validates :last_name, presence: true, length: { maximum: 255 }
   validates :email, presence: true, uniqueness: true
+  #   validates :password, ~~~　← このバリデーションは、Sorcery が自動で行うので削除。
+
+  # Sorcery のパスワードバリデーションを明示的に追加
+  validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
+  validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
+  validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 end

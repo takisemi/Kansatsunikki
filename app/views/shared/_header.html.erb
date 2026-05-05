@@ -1,13 +1,13 @@
 <header>
   <div class="flex justify-start">
-    <%= link_to '/', class: 'navbar-brand' do %>
+    <%= link_to '/', class: 'toppage' do %>
       <%= image_tag 'logo.png' %>
     <% end %>
 
     <div class="flex justify-end">
       <div>
-        <%= link_to t('header.profile'), '#', class: 'dropdown-item' %>
-        <%= button_to t('header.logout'), logout_path, class: 'dropdown-item', method: :delete, data: { turbo_method: :delete } %>
+        <%= link_to '日記一覧', posts_path %>
+        <%= button_to t('header.logout'), logout_path, method: :delete, data: { turbo_method: :delete } %>
       </div>
     </div>
   </div>

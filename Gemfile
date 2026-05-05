@@ -33,6 +33,9 @@ gem "bcrypt"
 
 gem 'rails-i18n', '~> 7.0.0'
 
+# 認証gem。current_user や logged_in? のメソッドを自分で書かずに使える。
+gem 'sorcery'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 

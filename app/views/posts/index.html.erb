@@ -1,0 +1,11 @@
+<h1>日記一覧</h1>
+
+<%= link_to '新規で書く', new_post_path %>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= link_to post.title, post %>
+    </li>
+  <% end %>
+</ul>

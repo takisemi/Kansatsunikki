@@ -1,25 +1,13 @@
 class ApplicationController < ActionController::Base
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
-  helper_method :logged_in?, :current_user
+  include Sorcery::Controller  # ← before_action の前に移動
   before_action :require_login
-
-  def logged_in?
-    !!current_user
-  end
-
-  def logout
-    session[:user_id] = nil
-    @current_user = nil
-  end
-
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-  end
+  #   helper_method :logged_in?, :current_user ← Sorceryを使う場合は不要。
 
   private
 
-  def require_login
-    redirect_to login_path unless logged_in?
+  def not_authenticated
+    redirect_to login_path, alert: 'ログインしてください'
   end
 end
