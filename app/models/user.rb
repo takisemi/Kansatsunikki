@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
-  has_many :posts
+  has_many :posts, :dependent => :destroy
   # has_secure_passwordは、Sorceryと競合するので削除。
 
   validates :first_name, presence: true, length: { maximum: 255 }

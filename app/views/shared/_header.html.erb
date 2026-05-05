@@ -6,8 +6,21 @@
 
     <div class="flex justify-end">
       <div>
+        <ul>
+          <li><%= current_user.last_name %> <%= current_user.first_name %></li>
+        </ul>
         <%= link_to '日記一覧', posts_path %>
         <%= button_to t('header.logout'), logout_path, method: :delete, data: { turbo_method: :delete } %>
+
+        <%# @user を使わず、current_user で判定 %>
+        <% if logged_in? && current_user.email != "test@example.com" %>
+          <%= link_to "アカウント削除", 
+            user_path(current_user), 
+            data: { 
+              turbo_method: :delete, 
+              turbo_confirm: "本当に削除しますか？" 
+            } %>
+          <% end %>
       </div>
     </div>
   </div>
