@@ -5,7 +5,7 @@
 <ul>
   <% @posts.each do |post| %>
     <li>
-      <%= link_to post.title, post %>
+      <td><%= l post.created_at, format: :short %></td><%= link_to post.title, post %>
     </li>
   <% end %>
 </ul>

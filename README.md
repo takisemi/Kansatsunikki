@@ -1,24 +1,44 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* アプリ名
+  - 観察日記
 
-Things you may want to cover:
+* アプリを作った理由
+  - 最近植物を育てているのですが、その生長過程を記録したいなと思ったのがきっかけです。アルバム的な使い方です。
+  なにかを育てている人のために作りました。
+  自分が小規模かつユルい感じなので、規模感もそれくらいを想定しています。
+  ちなみに、うちには朝顔１鉢とネモフィラ２鉢がいます。最近元気がない。というか、朝顔は発芽もしていなくて心配です。
+  室内には小さいガジュマル（土じゃなくてスポンジに植わっているタイプ）がいます。
 
-* Ruby version
+  - また、生長記録として以外にも、作業用メモとしても活用できたら、と思って計画しました。
+  水をやるついでに写真を撮り、必要なもの・作業を調べ、計画を立て、実行する。そういったサイクルを作る手助けになればな〜と思って作っていました。
 
-* System dependencies
 
-* Configuration
+* できること（機能一覧）
+  - 日記（投稿）の作成・編集・削除
+  - 日記（投稿）の一覧・詳細表示
+  - ログイン・ユーザー管理
 
-* Database creation
+  機能を作れるだけ作ったのですが、力およばず、未実装の部分も多いです。
+  デザイン性やユーザビリティうんぬんに至っては総スルーです。ものすごく使いづらいけど、日記の作成、編集、削除もできます。
 
-* Database initialization
 
-* How to run the test suite
+* 技術スタック
+  - 使用言語：Ruby
+  - フレームワーク：Ruby on Rails
+  - データベース：Neon
+  - インフラ / ホスティング：Render
+  - その他ライブラリ・ツール：.UptimeRobot , GitHub
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+* 今後の改善ポイント
+  - 画像添付機能 ： 一番のメイン機能。
+  - サブ項目の追加 ： 気になることや、これからの作業予定等を書く欄を追加したい。
+  - レイアウト、デザイン全般 ： tailwindに慣れる必要がある。
+  - 設計情報の整理 ： 慌てて環境構築を始めたので、あまり事前設計をしてなかった。  
 
-* ...
+* 公開URL
+  https://kansatsunikki.onrender.com/
+
+* GitHub URL
+  https://github.com/takisemi/Kansatsunikki

@@ -9,3 +9,8 @@ ja:
         first_name: 名
         password: パスワード
         password_confirmation: パスワード確認
+
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M"
+      short: "%Y/%m/%d"
