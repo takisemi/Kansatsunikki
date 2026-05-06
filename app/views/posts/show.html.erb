@@ -1,9 +1,9 @@
+<div class="w-full max-w-3/4 m-auto text-left">
 <h1><%= @post.title %></h1>
 <td><%= l @post.created_at %></td>
 <p><%= @post.content %></p>
 
-
-
 <%= link_to '編集する', edit_post_path(@post) %> |
 <%= button_to '削除する', post_path(@post), method: :delete, data: { turbo_method: :delete } %> |
 <%= link_to '一覧に戻る', posts_path %>
+  </div>
