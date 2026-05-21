@@ -4,8 +4,23 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+# コメントアウトした one: {}
 # column: value
 #
-two: {}
+# コメントアウトした two: {}
 # column: value
+
+
+one:
+  email: "test_user_one@example.com"
+  first_name: "User One"
+  last_name: "Test One"
+  crypted_password: <%= BCrypt::Password.create('password', cost: 4) %>
+  salt: "asalt"
+  
+two:
+  email: "test_user_two@example.com"
+  first_name: "User Two"
+  last_name: "Test Two"
+  crypted_password: <%= BCrypt::Password.create('password', cost: 4) %>
+  salt: "asalt"
