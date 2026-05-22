@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented in this file.  
 このプロジェクトにおける重要な変更点はすべて、このファイルに記録されます。
 
 
@@ -15,13 +15,15 @@ All notable changes to this project will be documented in this file.
 - 交流機能
 
 ### Fixed 不具合の修正
+（現在は無し）
 
 ### Changed 変更
 - ユーザー新規登録時のエラーメッセージ（対応中）
 - アプリケーション全般のスタイリング
 
 ### Removed 削除
-
+（現在は無し）  
+  
 
 ## [Released] リリース済み
 
