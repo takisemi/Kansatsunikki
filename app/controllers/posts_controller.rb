@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  skip_before_action :require_login, only: [:index, :show]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  skip_before_action :require_login, only: [ :index, :show ]
+  before_action :set_post, only: [ :show, :edit, :update, :destroy ]
   before_action :require_login  # ログイン必須にする
 
   def index
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
 
     if @post.save
-      redirect_to @post, notice: '投稿しました！'
+      redirect_to @post, notice: "投稿しました！"
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   def update
     @post = current_user.posts.find(params[:id])
     if @post.update(post_params)
-      redirect_to @post, notice: '更新しました！'
+      redirect_to @post, notice: "更新しました！"
     else
       render :edit
     end
