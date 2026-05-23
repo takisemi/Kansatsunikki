@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   def destroy
     @post = current_user.posts.find(params[:id])
     @post.destroy!
-    redirect_to posts_url, notice: '削除しました！'
+    redirect_to posts_url, notice: "削除しました！"
   end
 
   private
@@ -50,7 +50,7 @@ class PostsController < ApplicationController
   def set_post
     @post = current_user.posts.find(params[:id])
   rescue ActiveRecord::RecordNotFound
-    redirect_to posts_path, alert: '記事が見つかりません'
+    redirect_to posts_path, alert: "記事が見つかりません"
   end
 
   def post_params

@@ -9,7 +9,7 @@ class UserSessionsController < ApplicationController
   Rails.logger.info "=== Login attempt ==="
   Rails.logger.info "Email: #{params[:session][:email]}"
   Rails.logger.info "User found: #{User.find_by(email: params[:session][:email]).present?}"
-  
+
 
 
 
@@ -22,16 +22,16 @@ class UserSessionsController < ApplicationController
 
 
     if @user
-      redirect_to root_path, status: :see_other, success: 'ログインしました'
+      redirect_to root_path, status: :see_other, success: "ログインしました"
     else
        Rails.logger.info "Login failed"
-       flash.now[:danger] = 'ログインに失敗しました'
+       flash.now[:danger] = "ログインに失敗しました"
        render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
     logout
-    redirect_to root_path, notice: 'ログアウトしました'
+    redirect_to root_path, notice: "ログアウトしました"
   end
 end
