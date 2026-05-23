@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true, length: { maximum: 255 }
   validates :last_name, presence: true, length: { maximum: 255 }
   validates :email, presence: true, uniqueness: true
-  #   validates :password, ~~~　← このバリデーションは、Sorcery が自動で行うので削除。
+  #  validates :password, ~~~　← このバリデーションは、Sorcery が自動で行うので削除。
 
   # Sorcery のパスワードバリデーションを明示的に追加
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }

@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-      # 自分の投稿のみ取得（他人の投稿は編集できないようにする）
+    # 自分の投稿のみ取得（他人の投稿は編集できないようにする）
     @post = current_user.posts.find(params[:id])
   end
 
