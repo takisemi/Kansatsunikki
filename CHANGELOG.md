@@ -27,6 +27,25 @@ All notable changes to this project will be documented in this file.
 
 ## [Released] リリース済み
 
+## 2026-05-25
+画像投稿機能を追加
+
+### Added
+- Gemfile
+  - dotenv　を追加
+- Gemfile.lock
+- app/controllers/posts_controller.rb
+  - :image　を追加
+- app/views/posts/_form.html.erb
+  - :image　を追加
+- app/views/posts/show.html.erb
+  - :imageのformタグ　を追加
+- config/environments/development.rb
+  - config.active_storage.service = :amazon　を追加
+- config/storage.yml
+  - amazon:　を追加
+
+
 ## 2026-05-22
 Nodeのバージョンを長期サポート版「v24.15.0(Latest LTS: Krypton)」に更新
 
