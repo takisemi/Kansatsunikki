@@ -1,13 +1,13 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.  
+- All notable changes to this project will be documented in this file.  
 このプロジェクトにおける重要な変更点はすべて、このファイルに記録されます。
+- 学習中であるため、記述要領が不適当な場合もあると思われます。
 
 
 ## [Unreleased] 未リリース
 
 ### Added 追加
-- 画像投稿機能（対応中）
 - タグ付け機能
 - メモ投稿機能
 - アラート機能
@@ -18,7 +18,6 @@ All notable changes to this project will be documented in this file.
 （現在は無し）
 
 ### Changed 変更
-- ユーザー新規登録時のエラーメッセージ（対応中）
 - アプリケーション全般のスタイリング
 
 ### Removed 削除
@@ -26,6 +25,17 @@ All notable changes to this project will be documented in this file.
   
 
 ## [Released] リリース済み
+
+## 2026-05-26
+i18n対応：ユーザー新規登録時、ログイン時の表示／エラーメッセージを修正
+
+### Changed
+- config/locales/activerecord/ja.yml
+- config/locales/views/ja.yml
+- app/views/users/new.html.erb
+- app/views/user_sessions/new.html.erb
+- app/views/static_pages/top.html.erb
+
 
 ## 2026-05-25
 画像投稿機能を追加

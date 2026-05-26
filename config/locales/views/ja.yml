@@ -11,18 +11,20 @@ ja:
     new:
       title: ログイン
       login: ログイン
+      email: メールアドレス
+      password: パスワード
       to_register_page: 登録ページへ
       password_forget: パスワードをお忘れの方はこちら
   users:
     new:
       title: ユーザー登録
       to_login_page: ログインページへ
+      last_name: みょうじ
+      first_name: なまえ
+      email: メールアドレス
+      password: パスワード
+      password_confirmation: パスワード（確認）
       create: 登録
   header:
     login: ログイン
     logout: ログアウト
-    board: 掲示板
-    board_index: 掲示板一覧
-    create_board: 掲示板作成
-    bookmark_index: ブックマーク一覧
-    profile: プロフィール
