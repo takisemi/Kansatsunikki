@@ -28,3 +28,6 @@ ja:
   header:
     login: ログイン
     logout: ログアウト
+    posts: 日記一覧
+    user_destroy: アカウント削除
+    user_destroy_confirmation: 本当に削除しますか？
