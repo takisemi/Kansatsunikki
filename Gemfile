@@ -72,5 +72,5 @@ end
 
 group :production do
   # AWS S3のインストール
-  gem 'aws-sdk-s3'
+  gem 'aws-sdk-s3', require: false
 end
