@@ -69,3 +69,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+group :production do
+  # AWS S3のインストール
+  gem 'aws-sdk-s3'
+end
