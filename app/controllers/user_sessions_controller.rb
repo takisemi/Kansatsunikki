@@ -10,12 +10,8 @@ class UserSessionsController < ApplicationController
   Rails.logger.info "Email: #{params[:session][:email]}"
   Rails.logger.info "User found: #{User.find_by(email: params[:session][:email]).present?}"
 
-
-
-
     user_params = params.require(:session).permit(:email, :password)
     @user = login(params[:session][:email], params[:session][:password])
-
 
     # デバッグ用ログ
     Rails.logger.info "Login result: #{@user.present?}"
