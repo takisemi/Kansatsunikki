@@ -4,7 +4,7 @@
 <p><%= @post.content %></p>
 <div><%= image_tag @post.image %></div>
 
-<%= link_to '編集する', edit_post_path(@post) %> |
-<%= button_to '削除する', post_path(@post), method: :delete, data: { turbo_method: :delete } %> |
-<%= link_to '一覧に戻る', posts_path %>
+<%= link_to t('.edit'), edit_post_path(@post) %> |
+<%= button_to t('.destroy'), post_path(@post), method: :delete, data: { turbo_method: :delete } %> |
+<%= link_to t('.index'), posts_path %>
   </div>

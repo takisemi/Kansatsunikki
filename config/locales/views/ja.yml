@@ -32,8 +32,18 @@ ja:
     user_destroy: アカウント削除
     user_destroy_confirmation: 本当に削除しますか？
   posts:
+    form:
+      title: 日記のタイトル
+      content: 日記の内容
+      image: 写真
     index:
+      index: 日記一覧
+      new: 新規で書いてみませんか？
     new:
+      new: 新規作成
     edit:
       edit: 記入中....
     show:
+      edit: 編集する
+      destroy: 削除する
+      index: 一覧に戻る

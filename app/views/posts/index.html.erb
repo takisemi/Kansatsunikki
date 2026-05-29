@@ -1,7 +1,7 @@
 <div class="w-full max-w-3/4 m-auto text-left">
-<h1>日記一覧</h1>
+<h1><%= t('.index') %></h1>
 
-<%= link_to '新規で書く', new_post_path %>
+<%= link_to t('posts.index.new'), new_post_path %>
 
 <ul>
   <% @posts.each do |post| %>
