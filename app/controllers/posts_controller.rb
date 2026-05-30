@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
 
     if @post.save
-      redirect_to @post, notice: "投稿しました！"
+      redirect_to @post, notice: t('.success')
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   def update
     @post = current_user.posts.find(params[:id])
     if @post.update(post_params)
-      redirect_to @post, notice: "更新しました！"
+      redirect_to @post, notice: t('.success')
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   def destroy
     @post = current_user.posts.find(params[:id])
     @post.destroy!
-    redirect_to posts_url, notice: "削除しました！"
+    redirect_to posts_url, notice: t('.success')
   end
 
   private
@@ -50,7 +50,7 @@ class PostsController < ApplicationController
   def set_post
     @post = current_user.posts.find(params[:id])
   rescue ActiveRecord::RecordNotFound
-    redirect_to posts_path, alert: "記事が見つかりません"
+    redirect_to posts_path, alert: t('.success')
   end
 
   def post_params
