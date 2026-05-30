@@ -47,3 +47,9 @@ ja:
       edit: 編集する
       destroy: 削除する
       index: 一覧に戻る
+      create:
+        success: 投稿しました！
+      update:
+        success: 更新しました！
+      destroy:
+        success: 削除しました！
