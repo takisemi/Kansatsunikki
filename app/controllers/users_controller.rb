@@ -9,9 +9,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path, status: :see_other, success: "ユーザー登録が完了しました"
+      redirect_to root_path, status: :see_other, success: t('defaults.flash_message.account_created')
     else
-      flash.now[:danger] = "ユーザー登録に失敗しました"
+      flash.now[:danger] = t('defaults.flash_message.account_not_created')
       render :new, status: :unprocessable_entity
     end
   end
@@ -23,9 +23,9 @@ def destroy
   if @user == current_user
     @user.destroy
     reset_session  # セッションをクリア
-    redirect_to root_path, notice: "アカウントを削除しました。", status: :see_other
+    redirect_to root_path, notice: t('defaults.flash_message.account_destroyed'), status: :see_other
   else
-    redirect_to root_path, alert: "不正な操作です。", status: :see_other
+    redirect_to root_path, alert: t('defaults.flash_message.account_not_destroyed'), status: :see_other
   end
 end
 

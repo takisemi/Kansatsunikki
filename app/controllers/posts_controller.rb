@@ -19,8 +19,9 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
 
     if @post.save
-      redirect_to @post, notice: t('.success')
+      redirect_to @post, notice: t('defaults.flash_message.created')
     else
+      flash.now[:danger] = t('defaults.flash_message.not_created')
       render :new, status: :unprocessable_entity
     end
   end
@@ -33,8 +34,9 @@ class PostsController < ApplicationController
   def update
     @post = current_user.posts.find(params[:id])
     if @post.update(post_params)
-      redirect_to @post, notice: t('.success')
+      redirect_to @post, notice: t('defaults.flash_message.updated')
     else
+      flash.now[:danger] = t('defaults.flash_message.not_updated')
       render :edit
     end
   end
@@ -42,7 +44,7 @@ class PostsController < ApplicationController
   def destroy
     @post = current_user.posts.find(params[:id])
     @post.destroy!
-    redirect_to posts_url, notice: t('.success')
+    redirect_to posts_url, notice: flash.now[:danger] = t('defaults.flash_message.destroyed')
   end
 
   private
@@ -50,7 +52,7 @@ class PostsController < ApplicationController
   def set_post
     @post = current_user.posts.find(params[:id])
   rescue ActiveRecord::RecordNotFound
-    redirect_to posts_path, alert: t('.success')
+    redirect_to posts_path, alert: t('defaults.flash_message.post_success')
   end
 
   def post_params

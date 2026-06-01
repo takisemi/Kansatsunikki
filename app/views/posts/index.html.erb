@@ -2,6 +2,11 @@
 <h1><%= t('.index') %></h1>
 
 <%= link_to t('posts.index.new'), new_post_path %>
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>">
+    <%= message %>
+  </div>
+<% end %>
 
 <ul>
   <% @posts.each do |post| %>

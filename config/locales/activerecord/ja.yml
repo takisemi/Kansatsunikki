@@ -9,7 +9,11 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード（確認）
-
+      post:
+        post: 日記
+        title: 日記のタイトル
+        content: 日記の内容
+        image: 写真
   time:
     formats:
       default: "%Y/%m/%d %H:%M"

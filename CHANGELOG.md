@@ -25,9 +25,16 @@
 
 ### Removed 削除
 - 登録情報（みょうじ、なまえ）の片方を削除
-  
+
 
 ## [Released] リリース済み
+## 2026-06-01
+フラッシュメッセージの実装
+### Changed
+- 各種ビュー、コントローラー
+- config/locales/（activerecord , views）/ ja.yml　
+- Gemfile：デコレーター準備のため
+
 ## 2026-05-29
 i18n対応：投稿機能
 ### Changed
