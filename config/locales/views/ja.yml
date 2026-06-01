@@ -1,4 +1,21 @@
 ja:
+  defaults:
+    flash_message:
+      created: 日記を作成しました
+      not_created: 日記を作成できませんでした
+      updated: 日記を更新しました
+      not_updated: 日記を更新できませんでした
+      destroyed: 日記を削除しました
+      not_destroyed: 日記をを削除できませんでした
+      post_success: 日記の操作（作業用フラッシュメッセージです）
+      require_login: ログインしてください
+      logged_in: ログインしました
+      not_logged_in: ログインできませんでした
+      logged_out: ログアウトしました
+      account_created: ユーザー登録が完了しました
+      account_not_created: ユーザー登録に失敗しました
+      account_destroyed: アカウントを削除しました
+      account_not_destroyed: 不正な操作です
   helpers:
     submit:
       create: 登録
@@ -41,15 +58,12 @@ ja:
       new: 新規で書いてみませんか？
     new:
       new: 新規作成
+      back: 戻る
     edit:
       edit: 記入中....
+      back: 戻る
     show:
       edit: 編集する
       destroy:
         destroy: 削除する
-        success: 削除しました！
       index: 一覧に戻る
-      create:
-        success: 投稿しました！
-      update:
-        success: 更新しました！

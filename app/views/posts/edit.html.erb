@@ -1,5 +1,10 @@
 <div class="w-full max-w-3/4 m-auto text-left">
 <h1><%= t('.edit') %></h1>
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>">
+    <%= message %>
+  </div>
+<% end %>
 <%= render 'form', post: @post %>
-<%= link_to 'Back', posts_path %>
+<%= link_to t('.back'), posts_path %>
 </div>

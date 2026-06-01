@@ -5,10 +5,10 @@ class UserSessionsController < ApplicationController
 
   def create
     Rails.logger.debug "Params: #{params.inspect}"
-  # デバッグ用ログ
-  Rails.logger.info "=== Login attempt ==="
-  Rails.logger.info "Email: #{params[:session][:email]}"
-  Rails.logger.info "User found: #{User.find_by(email: params[:session][:email]).present?}"
+    # デバッグ用ログ
+    Rails.logger.info "=== Login attempt ==="
+    Rails.logger.info "Email: #{params[:session][:email]}"
+    Rails.logger.info "User found: #{User.find_by(email: params[:session][:email]).present?}"
 
     user_params = params.require(:session).permit(:email, :password)
     @user = login(params[:session][:email], params[:session][:password])
@@ -18,16 +18,16 @@ class UserSessionsController < ApplicationController
 
 
     if @user
-      redirect_to root_path, status: :see_other, success: "ログインしました"
+      redirect_to root_path, status: :see_other, success: t('defaults.flash_message.logged_in')
     else
        Rails.logger.info "Login failed"
-       flash.now[:danger] = "ログインに失敗しました"
+       flash.now[:danger] = t('defaults.flash_message.not_logged_in')
        render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
     logout
-    redirect_to root_path, notice: "ログアウトしました"
+    redirect_to root_path, notice: t('defaults.flash_message.logged_out')
   end
 end
