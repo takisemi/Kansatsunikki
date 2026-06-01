@@ -45,11 +45,11 @@ ja:
       edit: 記入中....
     show:
       edit: 編集する
-      destroy: 削除する
+      destroy:
+        destroy: 削除する
+        success: 削除しました！
       index: 一覧に戻る
       create:
         success: 投稿しました！
       update:
         success: 更新しました！
-      destroy:
-        success: 削除しました！
