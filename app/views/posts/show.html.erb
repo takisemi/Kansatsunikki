@@ -8,7 +8,7 @@
 <h1><%= @post.title %></h1>
 <td><%= l @post.created_at %></td>
 <p><%= @post.content %></p>
-<div><%= image_tag @post.image %></div>
+<div><%= image_tag @post.image if @post.image.present? %></div>
 
 <%= link_to t('.edit'), edit_post_path(@post) %> |
 <%= button_to t('.destroy.destroy'), post_path(@post), method: :delete, data: { turbo_method: :delete } %> |
