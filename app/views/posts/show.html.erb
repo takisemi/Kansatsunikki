@@ -9,6 +9,9 @@
 <td><%= l @post.created_at %></td>
 <p><%= @post.content %></p>
 <div><%= image_tag @post.image if @post.image.present? %></div>
+<% @post.images.each do |image| %>
+<%= image_tag @post.images if @post.images.attached? %>
+<% end %>
 
 <%= link_to t('.edit'), edit_post_path(@post) %> |
 <%= button_to t('.destroy.destroy'), post_path(@post), method: :delete, data: { turbo_method: :delete } %> |
