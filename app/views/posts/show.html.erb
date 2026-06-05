@@ -7,11 +7,14 @@
 <div class="w-full max-w-3/4 m-auto text-left">
 <h1><%= @post.title %></h1>
 <td><%= l @post.created_at %></td>
-<p><%= @post.content %></p>
-<div><%= image_tag @post.image if @post.image.present? %></div>
-<% @post.images.each do |image| %>
-<%= image_tag @post.images if @post.images.attached? %>
-<% end %>
+<p>
+  <%= @post.content %>
+  <% if @post.images.attached? %>
+    <% @post.images.each do |image| %>
+      <%= image_tag image.variant(resize_to_limit: [100, 100]) %>
+    <% end %>
+  <% end %>
+</p>
 
 <%= link_to t('.edit'), edit_post_path(@post) %> |
 <%= button_to t('.destroy.destroy'), post_path(@post), method: :delete, data: { turbo_method: :delete } %> |
