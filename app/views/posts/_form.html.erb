@@ -23,13 +23,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :image, t('.image') %>
-    <%= form.file_field :image %>
-  </div>
-
-  <div class="field">
     <%= form.label :images, t('.image') %>
-    <%= form.file_field :images, multiple: true %>
+    <%= form.file_field :images, direct_upload: true, multiple: true %>
   </div>
 
   <div class="actions">
