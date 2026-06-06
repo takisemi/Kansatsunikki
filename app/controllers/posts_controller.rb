@@ -18,6 +18,14 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
 
+    # 複数画像が表示されない：ログで確認
+    Rails.logger.debug "=== Post object ==="
+    Rails.logger.debug @post.inspect
+    Rails.logger.debug "=== Post valid? ==="
+    Rails.logger.debug @post.valid?
+    Rails.logger.debug "=== Post errors ==="
+    Rails.logger.debug @post.errors.full_messages
+
     if @post.save
       redirect_to @post, notice: t('defaults.flash_message.created')
     else
