@@ -17,7 +17,10 @@ RUN apt-get update -qq \
 && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
 # Node.js、yarn、その他の必要なパッケージをインストール
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs yarn vim
+#  + apt-get updateで作成されるパッケージリストのキャッシュを削除し、Dockerイメージのサイズを削減
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs yarn vim libvips libvips-dev postgresql-client \
+&& rm -rf /var/lib/apt/lists/*
+
 
 # アプリケーションディレクトリの作成
 RUN mkdir /myapp
@@ -29,7 +32,9 @@ RUN gem install bundler
 # アプリケーションのコードをコピー
 COPY . /myapp
 
-# Gemfile のコピー（らんてくんとの質疑応答から追加）
+# Gemfileのコピー… gemのバージョンを固定する = チームメンバー間でバージョンを統一するため。Gemfile.lockがないと、bundle install時に最新版がインストールされる可能性あり。
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemapp/Gemfile.lock
 RUN bundle install
+
+CMD ["bin/dev"]
