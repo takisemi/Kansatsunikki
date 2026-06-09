@@ -2,7 +2,7 @@
 
 - All notable changes to this project will be documented in this file.  
 （このプロジェクトにおける重要な変更点はすべて、このファイルに記録されます。）
-- 学習中であるため、記述要領が不適当な場合もあると思われます。
+- 学習中のため、記述が不適当な箇所もあります。
 
 
 ## [Unreleased] 未リリース
