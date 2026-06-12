@@ -24,4 +24,9 @@ Rails.application.routes.draw do
   get '/posts/:id/edit', to: 'posts#edit'
   put '/posts/:id', to: 'posts#update'
   delete '/posts/:id', to: 'posts#destroy'
+  resources :posts do
+    collection do
+      delete :bulk_destroy
+    end
+  end
 end
