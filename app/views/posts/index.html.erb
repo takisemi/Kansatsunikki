@@ -7,12 +7,19 @@
     <%= message %>
   </div>
 <% end %>
+<%= form_with url: bulk_destroy_posts_path, method: :delete, local: true, data: { turbo_confirm: "選択した記事を削除しますか？" } do |f| %>
 
 <ul>
   <% @posts.each do |post| %>
+    <div>
+      <%= check_box_tag "post_ids[]", post.id, false, id: "post_#{post.id}" %>
+      <%= label_tag "post_#{post.id}", post.title %>
+    </div>
     <li>
       <td><%= l post.created_at, format: :short %></td><%= link_to post.title, post %>
     </li>
   <% end %>
 </ul>
+  <%= submit_tag "選択した記事を削除", class: "btn btn-danger" %>
+  <% end %>
 </div>
