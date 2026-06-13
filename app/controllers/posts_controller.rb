@@ -55,6 +55,18 @@ class PostsController < ApplicationController
     redirect_to posts_url, notice: flash.now[:danger] = t('defaults.flash_message.destroyed')
   end
 
+  def bulk_destroy
+    post_ids = params[:post_ids]
+  
+    if post_ids.blank?
+      redirect_to posts_path, alert: "削除する記事を選択してください"
+    return
+    end
+  
+    deleted_count = Post.where(id: post_ids).destroy_all.size
+    redirect_to posts_path, notice: "#{deleted_count}件の記事を削除しました"
+  end
+
   private
 
   def set_post
