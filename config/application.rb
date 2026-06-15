@@ -24,5 +24,7 @@ module Myapp
     config.time_zone = 'Asia/Tokyo'
     # config.eager_load_paths << Rails.root.join("extras")
     config.i18n.default_locale = :ja
+
+    config.web_console.whitelisted_ips = '192.168.65.1'
   end
 end
