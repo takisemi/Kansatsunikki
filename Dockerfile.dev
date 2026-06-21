@@ -1,20 +1,23 @@
 # Ruby のベースイメージを指定
-FROM ruby:3.3.6
+FROM ruby:3.4.9
 
 # 環境変数の設定
 ENV LANG C.UTF-8  # 日本語対応
 ENV TZ Asia/Tokyo # タイムゾーンを日本に設定
 
-# Node.js と yarn のセットアップ
+# Node.js と yarn のセットアップ 2026-06-21更新
 # 1. 基本パッケージのインストール
 # 2. Node.js v24 のセットアップスクリプト実行
 # 3. yarn のリポジトリ設定
 RUN apt-get update -qq \
-&& apt-get install -y ca-certificates curl gnupg \
-&& mkdir -p /etc/apt/keyrings \
-&& curl -fsSL https://deb.nodesource.com/setup_24.x | bash - \
-&& wget --quiet -O - /tmp/pubkey.gpg https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
-&& echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+  && apt-get install -y ca-certificates curl gnupg \
+  && mkdir -p /etc/apt/keyrings \
+  && curl -fsSL https://deb.nodesource.com/setup_24.x | bash - \
+  && apt-get install -y nodejs \
+  && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor -o /usr/share/keyrings/yarn-archive-keyring.gpg \
+  && echo "deb [signed-by=/usr/share/keyrings/yarn-archive-keyring.gpg] https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
+  && apt-get update -qq \
+  && apt-get install -y yarn
 
 # Node.js、yarn、その他の必要なパッケージをインストール
 #  + apt-get updateで作成されるパッケージリストのキャッシュを削除し、Dockerイメージのサイズを削減

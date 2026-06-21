@@ -457,7 +457,7 @@ DEPENDENCIES
   pg (~> 1.1)
   pry-byebug
   puma (>= 5.0)
-  rails (~> 7.2.3, >= 7.2.3.1)
+  rails
   rails-i18n (~> 7.0.0)
   rubocop-rails-omakase
   selenium-webdriver
