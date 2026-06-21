@@ -15,13 +15,22 @@
 ### Fixed 不具合の修正
 - ファビコンについて、エラー表示の修正
 ### Changed 変更
-- Railsのバージョン更新
 - アプリケーション全般のスタイリング
 ### Removed 削除
 - 登録情報（みょうじ、なまえ）の片方を削除
 
 
 ## [Released] リリース済み
+## 2026-06-22
+- Ruby及びRailsのバージョンを更新（Ruby:3.3.6 → 3.4.9 / Rails:7.2.3.1 → 8.1.3）
+### Changed
+- Dockerfile, Dockerfile.dev, .ruby-version, Gemfile (, Gemfile.lock)：
+  - バージョンの修正　… Ruby：3.3.6 → 3.4.9 / Rails：7.2.3.1 → 8.1.3 に
+  - Rubyの更新により、Dockerイメージとして Debian 12 (Bookworm) → Debian 13 (Trixie) を使用するため、apt-keyの記述を修正
+  - gem "rails-i18n"のバージョン指定を削除
+- db/schema.rb：データベースのマイグレーションを確認
+- README：バージョン情報の修正
+
 ## 2026-06-19
 - 日記を複数選択し、削除する機能を実装
 ### Fixed
@@ -29,8 +38,8 @@
 - posts/index.html.erb：複数削除用のチェックボックス周辺の表示を整理
 
 ## 2026-06-13 〜 2026-06-19
-- 日記を複数選択し、削除する機能の実装準備中 …ボタンはあるものの削除ができない状態（対応済み）
-### Added,Fixed
+- 日記を複数選択し、削除する機能の実装準備中 … ボタンはあるものの削除ができない状態（対応済み）
+### Added, Fixed
 - postsのビュー、コントローラー：新規実装準備／コントローラーにはデバッグ用コードを記述
 - config/application.rb：ホワイトリストを追加
 
@@ -46,7 +55,7 @@
 
 ## 2026-06-07
 - 画像の複数枚投稿機能を実装　-　画像が見えない不具合について対応完了
-### Added・Fixed
+### Added, Fixed
 - Dockerfile.dev：libvips以降のパッケージインストール部分を追記／パッケージリストのキャッシュ削除部分を追記
 - postsのビュー（show）
 

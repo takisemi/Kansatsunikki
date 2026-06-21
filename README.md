@@ -19,7 +19,7 @@
   投稿の一覧表示、新規作成、編集、削除
 
 ## 技術スタック
-- バックエンド：Ruby 3.3.6 , Ruby on Rails 7.2
+- バックエンド：Ruby 3.4.9 , Ruby on Rails 8.1.3
 - データベース：PostgreSQL / Neon
 - 開発環境：Docker
 - インフラ・デプロイ：Render
