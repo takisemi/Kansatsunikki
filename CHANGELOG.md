@@ -25,7 +25,7 @@
 - Ruby及びRailsのバージョンを更新（Ruby:3.3.6 → 3.4.9 / Rails:7.2.3.1 → 8.1.3）
 ### Changed
 - Dockerfile, Dockerfile.dev, .ruby-version, Gemfile (, Gemfile.lock)：
-  - バージョンの修正　… Ruby：3.3.6 → 3.4.9 / Rails：7.2.3.1 → 8.1.3 に
+  - バージョンの変更　… Ruby：3.3.6 → 3.4.9 / Rails：7.2.3.1 → 8.1.3 に変更
   - Rubyの更新により、Dockerイメージとして Debian 12 (Bookworm) → Debian 13 (Trixie) を使用するため、apt-keyの記述を修正
   - gem "rails-i18n"のバージョン指定を削除
 - db/schema.rb：データベースのマイグレーションを確認
