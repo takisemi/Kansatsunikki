@@ -56,6 +56,8 @@ ja:
     index:
       index: 日記一覧
       new: 新規で書いてみませんか？
+      bulk_destroy: 選択した記事を削除する
+      bulk_destroy_confirmation: 選択した記事を削除しますか？
     new:
       new: 新規作成
       back: 戻る
