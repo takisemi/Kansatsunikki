@@ -8,7 +8,7 @@
   </div>
 <% end %>
 
-<%= form_with url: bulk_destroy_posts_path, method: :delete, local: true, data: { turbo_confirm: "選択した記事を削除しますか？" } do |f| %>
+<%= form_with url: bulk_destroy_posts_path, method: :delete, local: true, data: { turbo_confirm: t('posts.index.bulk_destroy_confirmation') } do |f| %>
 
 <ul>
   <% @posts.each do |post| %>
@@ -17,6 +17,6 @@
     </li>
   <% end %>
 </ul>
-  <%= submit_tag "選択した記事を削除", class: "btn btn-danger" %>
+  <%= submit_tag t('posts.index.bulk_destroy') , class: "btn btn-danger" %>
   <% end %>
 </div>
