@@ -7,7 +7,7 @@ ja:
       not_updated: 日記を更新できませんでした
       destroyed: 日記を削除しました
       not_destroyed: 日記をを削除できませんでした
-      post_success: 日記の操作（作業用フラッシュメッセージです）
+      post_success: 日記の操作を行いました【作業用フラッシュメッセージ】
       require_login: ログインしてください
       logged_in: ログインしました
       not_logged_in: ログインできませんでした
