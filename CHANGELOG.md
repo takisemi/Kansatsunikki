@@ -21,6 +21,12 @@
 
 
 ## [Released] リリース済み
+## 2026-07-02
+- ファビコン等エラーの修正
+### Fixed
+- app/views/pwa/manifest.json.erb：ファビコン、アプリの説明情報の修正
+- app/views/layouts/application.html.erb：ファビコン、meta nameタグの修正
+
 ## 2026-06-22
 - Ruby及びRailsのバージョンを更新（Ruby:3.3.6 → 3.4.9 / Rails:7.2.3.1 → 8.1.3）
 ### Changed
