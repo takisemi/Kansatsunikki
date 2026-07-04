@@ -16,18 +16,29 @@ class UsersController < ApplicationController
     end
   end
 
-def destroy
-  @user = User.find(params[:id])
+  def edit
+    @user = User.find(params[:id])
 
-  # セキュリティ: 本人以外が削除できないようにする
-  if @user == current_user
-    @user.destroy
-    reset_session  # セッションをクリア
-    redirect_to root_path, notice: t('defaults.flash_message.account_destroyed'), status: :see_other
-  else
-    redirect_to root_path, alert: t('defaults.flash_message.account_not_destroyed'), status: :see_other
+    if @user == current_user
+      @user.edit
+      redirect_to root_path, status: :see_other, success: "登録情報を変更しました"
+    else
+      redirect_to root_path, alert: "登録情報を変更できませんでした"
+    end
   end
-end
+
+  def destroy
+    @user = User.find(params[:id])
+
+    # セキュリティ: 本人以外が削除できないようにする
+    if @user == current_user
+      @user.destroy
+      reset_session  # セッションをクリア
+      redirect_to root_path, notice: t('defaults.flash_message.account_destroyed'), status: :see_other
+    else
+      redirect_to root_path, alert: t('defaults.flash_message.account_not_destroyed'), status: :see_other
+    end
+  end
 
   private
 
