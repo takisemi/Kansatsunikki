@@ -42,6 +42,15 @@ ja:
       password: パスワード
       password_confirmation: パスワード（確認）
       create: 登録
+    edit:
+      title: ユーザー情報の変更
+      to_top_page: 戻る
+      last_name: みょうじ
+      first_name: なまえ
+      email: メールアドレス
+      password: パスワード
+      password_confirmation: パスワード（確認）
+      create: 決定
   header:
     login: ログイン
     logout: ログアウト
