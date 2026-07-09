@@ -6,7 +6,6 @@
 
 ## [Unreleased] 未リリース
 ### Added 追加
-- 登録情報（なまえ、メールアドレス、パスワード）の変更機能
 - タグ付け機能
 - メモ投稿機能
 - アラート機能
@@ -15,13 +14,26 @@
 ### Fixed 不具合の修正
 - （現在はなし）
 ### Changed 変更
-- アプリケーション全般のスタイリングf
+- アプリケーション全般のスタイリング
 - ファビコン用画像のサイズ追加
 ### Removed 削除
 - 登録情報（みょうじ、なまえ）の片方を削除
 
 
 ## [Released] リリース済み
+## 2026-07-04　〜 2026-07-09
+- ユーザー情報（なまえ、メールアドレス、パスワード）の変更機能を実装
+### Added, Changed
+- app/controller/users_controller.rb
+- app/views/users/edit.html.erb
+- app/views/users/new.html.erb
+- app/views/users/_form.html.erb
+- app/views/shared/_header.html.erb
+- config/locales/views/ja.yml
+- config/routes.rb
+  - 全体　… edit,update部分を追加
+  - ビュー　… new,editの入力部分を_form.html.erbに分離
+
 ## 2026-07-02
 - ファビコン等エラーの修正
 ### Fixed
