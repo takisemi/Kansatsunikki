@@ -33,28 +33,25 @@ ja:
       to_register_page: 登録ページへ
       password_forget: パスワードをお忘れの方はこちら
   users:
-    new:
-      title: ユーザー登録
-      to_login_page: ログインページへ
+    form:
       last_name: みょうじ
       first_name: なまえ
       email: メールアドレス
       password: パスワード
       password_confirmation: パスワード（確認）
       create: 登録
+    new:
+      title: ユーザー登録
+      to_login_page: ログインページへ
     edit:
       title: ユーザー情報の変更
       to_top_page: 戻る
-      last_name: みょうじ
-      first_name: なまえ
-      email: メールアドレス
-      password: パスワード
-      password_confirmation: パスワード（確認）
       create: 決定
   header:
     login: ログイン
     logout: ログアウト
     posts: 日記一覧
+    user_edit: ユーザー情報を変更する
     user_destroy: アカウント削除
     user_destroy_confirmation: 本当に削除しますか？
   posts:

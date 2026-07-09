@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   root "static_pages#top"
 
   # ユーザー関連
-  resources :users, only: %i[new create destroy]
+  resources :users, only: %i[new create destroy edit update]
   
   # ログイン・ログアウト
   get 'login', to: "user_sessions#new"
