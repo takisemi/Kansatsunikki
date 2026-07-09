@@ -22,7 +22,7 @@
 
 ## [Released] リリース済み
 ## 2026-07-04　〜 2026-07-09
-- 登録情報（なまえ、メールアドレス、パスワード）の変更機能を実装
+- ユーザー情報（なまえ、メールアドレス、パスワード）の変更機能を実装
 ### Added, Changed
 - app/controller/users_controller.rb
 - app/views/users/edit.html.erb
