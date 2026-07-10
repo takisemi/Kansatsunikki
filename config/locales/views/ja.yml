@@ -12,10 +12,12 @@ ja:
       logged_in: ログインしました
       not_logged_in: ログインできませんでした
       logged_out: ログアウトしました
-      account_created: ユーザー登録が完了しました
-      account_not_created: ユーザー登録に失敗しました
-      account_destroyed: アカウントを削除しました
-      account_not_destroyed: 不正な操作です
+      user_created: ユーザー登録が完了しました
+      user_not_created: ユーザー登録に失敗しました
+      user_destroyed: アカウントを削除しました
+      user_not_destroyed: 不正な操作です
+      user_updated: ユーザー情報を変更しました
+      user_not_updated: ユーザー情報の変更に失敗しました
   helpers:
     submit:
       create: 登録
@@ -61,9 +63,11 @@ ja:
       image: 写真
     index:
       index: 日記一覧
-      new: 新規で書いてみませんか？
+      new: 日記を書く
       bulk_destroy: 選択した日記を削除する
       bulk_destroy_confirmation: 選択した日記を削除しますか？
+      bulk_destroy_alert: 削除する日記を選択してください
+      bulk_destroy_notice: "%{deleted_count}件の日記を削除しました"
     new:
       new: 新規作成
       back: 戻る

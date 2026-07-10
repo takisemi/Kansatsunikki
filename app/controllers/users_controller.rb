@@ -9,9 +9,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path, status: :see_other, success: t('defaults.flash_message.account_created')
+      redirect_to root_path, status: :see_other, success: t('defaults.flash_message.user_created')
     else
-      flash.now[:danger] = t('defaults.flash_message.account_not_created')
+      flash.now[:danger] = t('defaults.flash_message.user_not_created')
       render :new, status: :unprocessable_entity
     end
   end
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
     # 本人以外が編集できないようにチェック
     unless @user == current_user
-      redirect_to root_path, alert: "登録情報を変更できませんでした"
+      redirect_to root_path, alert: t('defaults.flash_message.user_not_updated')
     end
   end
 
@@ -30,12 +30,12 @@ class UsersController < ApplicationController
   
   if @user == current_user
     if @user.update(user_params)
-      redirect_to root_path, status: :see_other, success: "登録情報を変更しました"
+      redirect_to root_path, status: :see_other, success: t('defaults.flash_message.user_updated')
     else
       render :edit, status: :unprocessable_entity
     end
   else
-    redirect_to root_path, alert: "登録情報を変更できませんでした"
+    redirect_to root_path, alert: t('defaults.flash_message.user_not_updated')
   end
 end
 
@@ -46,9 +46,9 @@ end
     if @user == current_user
       @user.destroy
       reset_session  # セッションをクリア
-      redirect_to root_path, notice: t('defaults.flash_message.account_destroyed'), status: :see_other
+      redirect_to root_path, notice: t('defaults.flash_message.user_destroyed'), status: :see_other
     else
-      redirect_to root_path, alert: t('defaults.flash_message.account_not_destroyed'), status: :see_other
+      redirect_to root_path, alert: t('defaults.flash_message.user_not_destroyed'), status: :see_other
     end
   end
 
