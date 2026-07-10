@@ -58,17 +58,15 @@ class PostsController < ApplicationController
   def bulk_destroy
     post_ids = params[:post_ids]
 
-    # 複数削除ができない：何が送られてきているか確認
+    # デバッグ用：何が送られてきているか確認
     Rails.logger.debug "===== params: #{params.inspect} ====="
     Rails.logger.debug "===== post_ids: #{params[:post_ids].inspect} ====="
   
     if post_ids.blank?
-      redirect_to posts_path, alert: "削除する記事を選択してください"
+      redirect_to posts_path, alert: t('posts.index.bulk_destroy_alert')
     return
     end
-  
-    deleted_count = Post.where(id: post_ids).destroy_all.size
-    redirect_to posts_path, notice: "#{deleted_count}件の記事を削除しました"
+    redirect_to posts_path, notice: t('posts.index.bulk_destroy_notice', deleted_count: Post.where(id: post_ids).destroy_all.size)
   end
 
   private
