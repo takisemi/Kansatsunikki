@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
   include Sorcery::Controller  # ← before_action の前に移動
   before_action :require_login
-  #   helper_method :logged_in?, :current_user ← Sorceryを使う場合は不要。
+  #   helper_method :logged_in?, :current_user ← Sorceryを使う場合は不要
   add_flash_types :success, :danger
 
   private

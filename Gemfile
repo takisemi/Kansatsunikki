@@ -16,6 +16,9 @@ gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 # Tailwind CSS の削除に伴い、gem "cssbundling-rails"を削除
+# SCSSを使用、コンパイルするために必要（RailsのスタイリングはあくまでSCSSでなくCSS）
+gem "sprockets-rails"
+gem "sassc-rails" 
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"

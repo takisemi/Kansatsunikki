@@ -1,3 +1,5 @@
+@use 'variables';
+
 .top-wrapper {
   background-image: url('top.jpg');
   height: calc(100vh - 134px);
