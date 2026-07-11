@@ -22,6 +22,13 @@
 
 
 ## [Released] リリース済み
+## 2026-07-11　〜 
+- アプリケーション全般のスタイリング
+  - Tailwind CSS を削除
+### Added, Changed, Removed
+- app/assetsディレクトリ配下：Tailwind CSS関連のディレクトリ・ファイルを削除
+- Gemfile, package.json, Procfile.dev：Tailwind CSS関連の記述を削除
+
 ## 2026-07-04　〜 2026-07-09
 - ユーザー情報（なまえ、メールアドレス、パスワード）の変更機能を実装
 ### Added, Changed
