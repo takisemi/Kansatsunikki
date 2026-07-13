@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
 
-    # 複数画像が表示されない：ログで確認
+    # デバッグ用ログ：複数画像アップロード時の情報確認
     Rails.logger.debug "=== Post object ==="
     Rails.logger.debug @post.inspect
     Rails.logger.debug "=== Post valid? ==="
