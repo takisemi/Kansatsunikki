@@ -4,8 +4,8 @@ class UserSessionsController < ApplicationController
   def new; end
 
   def create
-    Rails.logger.debug "Params: #{params.inspect}"
     # デバッグ用ログ
+    Rails.logger.debug "Params: #{params.inspect}"
     Rails.logger.info "=== Login attempt ==="
     Rails.logger.info "Email: #{params[:session][:email]}"
     Rails.logger.info "User found: #{User.find_by(email: params[:session][:email]).present?}"
