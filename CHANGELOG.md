@@ -26,8 +26,9 @@
 - アプリケーション全般のスタイリング
   - TailwindCSSを削除
   - SCSS環境を準備
+  - リセットCSSを適用
 ### Added, Changed, Removed
-- app/assetsディレクトリ配下
+- app/assetsディレクトリ配下：config, stylesheets
 - Gemfile
 - package.json
 - Procfile.dev
@@ -35,6 +36,7 @@
 - config/initializers/assets.rb
   - TailwindCSS関連のディレクトリ・ファイル・記述を削除
   - SCSS環境関連の記述を追加
+  - destyle.css（リセットCSSファイル）を追加
 
 ## 2026-07-04　〜 2026-07-09
 - ユーザー情報（なまえ、メールアドレス、パスワード）の変更機能を実装
