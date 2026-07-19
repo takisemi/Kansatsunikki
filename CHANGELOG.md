@@ -26,7 +26,7 @@
 - アプリケーション全般のスタイリング
   - TailwindCSSを削除
   - SCSS環境を準備
-  - リセットCSSを適用
+  - リセットCSSを適用　※ 2026-07-19 不具合（リセットCSSが反映されていない）対応中
 ### Added, Changed, Removed
 - app/assetsディレクトリ配下：config, stylesheets
 - Gemfile
