@@ -58,7 +58,7 @@ class PostsController < ApplicationController
   def bulk_destroy
     post_ids = params[:post_ids]
 
-    # デバッグ用：何が送られてきているか確認
+    # デバッグ用ログ：選択した日記の情報を表示
     Rails.logger.debug "===== params: #{params.inspect} ====="
     Rails.logger.debug "===== post_ids: #{params[:post_ids].inspect} ====="
   
