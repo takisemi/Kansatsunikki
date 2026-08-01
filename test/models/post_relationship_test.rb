@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ArticleRelationshipTest < ActiveSupport::TestCase
+class PostRelationshipTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

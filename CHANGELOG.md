@@ -22,13 +22,19 @@
 
 
 ## [Released] リリース済み
-## 2026-07-11　〜 
-- アプリケーション全般のスタイリング
+## 2026-07-30　〜 
+- タグ付け機能を実装開始
+  - マイグレーションファイルを作成
+### Added
+- db/migrateディレクトリ：create_tags, create_post_relationships
+
+## 2026-07-11　〜 2026-07-26
+- アプリケーション全般のスタイリング準備
   - TailwindCSSを削除
   - SCSS環境を準備
-  - リセットCSSを適用　※ 2026-07-19 不具合（リセットCSSが反映されていない）対応中
+  - リセットCSSを適用　※ 2026-07-19 不具合（リセットCSSが反映されていない）対応済
 ### Added, Changed, Removed
-- app/assetsディレクトリ配下：config, stylesheets
+- app/assetsディレクトリ：config, stylesheets
 - Gemfile
 - package.json
 - Procfile.dev
